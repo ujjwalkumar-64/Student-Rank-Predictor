@@ -57,5 +57,8 @@ if (quizData?.quiz) {
 
 export const predictRank = (submissions) => {
   const avgScore = _.meanBy(submissions, 'score');
-  return Math.round((720 - avgScore) * 1000);
+  return {rank:Math.round((720 - avgScore) * 1000 +1),
+    avgScore
+  };
+
 };

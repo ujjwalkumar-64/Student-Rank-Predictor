@@ -35,8 +35,10 @@ router.get('/analyze', async (req, res) => {
 router.get('/predict-rank', async (req, res) => {
   try {
     const historicalData = await getHistoricalData();
-    const rank = predictRank(historicalData);
-    res.json({ predicted_rank: rank });
+    const {rank,avgScore} = predictRank(historicalData);
+    res.json({ predicted_rank: rank,
+      average_score: avgScore
+     });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
