@@ -114,7 +114,10 @@ curl http://localhost:3000/api/analyze
 
    ```javascript
    const predictRank = (avgScore) => {
-     return Math.round((720 - avgScore) * 1000);
+     const avgScore = _.meanBy(submissions, 'score');
+      return {rank:Math.round((720 - avgScore) * 1000 +1),
+        avgScore
+      };
    };
    ```
 
