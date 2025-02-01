@@ -1,7 +1,11 @@
 import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
+
 import cors from 'cors';
 import analysisRouter from './src/routes/analysis.routes.js';
 import collegeRouter from './src/routes/college.routes.js';
+
 
 const app = express();
 

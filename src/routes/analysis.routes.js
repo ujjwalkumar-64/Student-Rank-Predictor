@@ -28,6 +28,7 @@ router.get('/analyze', async (req, res) => {
     res.json(analysis);
   } catch (error) {
     res.status(500).json({ error: error.message });
+    
   }
 });
 

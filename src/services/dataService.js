@@ -1,9 +1,10 @@
 import axios from 'axios';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const API_ENDPOINTS = {
-  QUIZ_DATA: process.env.QUIZ_ENDPOINT,
-  HISTORICAL_DATA: process.env.HISTORICAL_ENDPOINT,
-  CURRENT_SUBMISSION: process.env.QUIZ_SUBMISSION_ENDPOINT
+  QUIZ_DATA:process.env.QUIZ_ENDPOINT,
+  HISTORICAL_DATA:process.env.HISTORICAL_ENDPOINT,
+  CURRENT_SUBMISSION:process.env.QUIZ_SUBMISSION_ENDPOINT
 };
 
 export const getQuizData = async () => {
